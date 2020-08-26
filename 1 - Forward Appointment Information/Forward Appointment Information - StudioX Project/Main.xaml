@@ -1,0 +1,390 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1208,5605.6" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/word" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:si="clr-namespace:System.IO;assembly=mscorlib" xmlns:uasb="clr-namespace:UiPath.Activities.System.Binding;assembly=UiPath.System.Activities" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:um="clr-namespace:UiPath.Mail;assembly=UiPath.Mail.Activities" xmlns:umab="clr-namespace:UiPath.Mail.Activities.Business;assembly=UiPath.Mail.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="48">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Activities.System.Binding</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Word</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="38">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Word.Activities</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.Word</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <ueab:SequenceX sap:VirtualizedContainerService.HintSize="893.6,5540.8" sap2010:WorkflowViewState.IdRef="SequenceX_1">
+    <ueab:SequenceX.Variables>
+      <Variable x:TypeArguments="ue:IWorkbookQuickHandle" Default="[new WorkbookQuickHandle(workbookPath:=&quot;Project_Notebook.xlsx&quot;,visible:=True,autoSave:=False,createNew:=True,readOnly:=False,isWorkspace:=True)]" Name="Notes" />
+      <Variable x:TypeArguments="uasb:BindingsRepository" Default="[new UiPath.Activities.System.Binding.BindingsRepository()]" Name="Saved" />
+    </ueab:SequenceX.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard OpenMode="{x:Null}" sap2010:Annotation.AnnotationText="These activities open the ACME website and then perform two clicks: one to open the Health Care submenu and one to open the Download Daily Appointments page." CloseMode="Always" DisplayName="Use Browser Chrome: ACME System 1 - Dashboard" sap:VirtualizedContainerService.HintSize="850.4,739.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_1">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,464" sap2010:WorkflowViewState.IdRef="Sequence_1">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NClick ClickType="Single" DisplayName="Click 'Health Care'" sap:VirtualizedContainerService.HintSize="356.8,165.6" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://acme-test.uipath.com/reboot-your-skills" DesignTimeRectangle="468, 527, 200, 46" ElementType="Button" FriendlyName="'Health Care'" FullSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Dashboard' /&gt;&lt;webctrl aaname='              Health Care' parentid='dashmenu' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Dashboard' /&gt;&lt;webctrl aaname='              Health Care' parentid='dashmenu' tag='BUTTON' type='button' check:text='Health Care' /&gt;" ImageBase64="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" InformativeScreenshot="9e2768505d864a49de8e3693da6be8ef.png" SearchSteps="FuzzySelector, Image" Text="Health Care" TextMethod="AttributeText" TextSelector="&lt;webctrl tag='BUTTON' type='button' /&gt;">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target DesignTimeRectangle="468, 471, 200, 46" ElementType="Button" FriendlyName="'Internal Invoices'" FullSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Dashboard' /&gt;&lt;webctrl aaname='              Internal Invoices' parentid='dashmenu' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Dashboard' /&gt;&lt;webctrl aaname='              Internal Invoices' parentid='dashmenu' tag='BUTTON' type='button' check:text='Internal Invoices' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, Image" Text="Internal Invoices" TextMethod="AttributeText" TextSelector="&lt;webctrl tag='BUTTON' type='button' /&gt;" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NClick ClickType="Single" DisplayName="Click 'Download Daily'" sap:VirtualizedContainerService.HintSize="356.8,165.6" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://acme-test.uipath.com/reboot-your-skills" DesignTimeRectangle="689, 591, 219, 26" ElementType="Text" FriendlyName="'Download Daily'" FullSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Dashboard' /&gt;&lt;webctrl id='download-appointment' tag='A' /&gt;" FuzzySelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Dashboard' /&gt;&lt;webctrl id='download-appointment' tag='A' type='' aaname='Download Daily Appointment' check:text='Download Daily Appointment' /&gt;" ImageBase64="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" InformativeScreenshot="b62beffcd54827d76263dab3a66591df.png" SearchSteps="FuzzySelector, Image" Text="Download Daily Appointment" TextMethod="AttributeText" TextSelector="&lt;webctrl tag='A' type='' /&gt;">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target DesignTimeRectangle="689, 617, 219, 26" ElementType="Text" FriendlyName="'Download Treatment'" FullSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Dashboard' /&gt;&lt;webctrl id='download-treatment' tag='A' /&gt;" FuzzySelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Dashboard' /&gt;&lt;webctrl id='download-treatment' tag='A' type='' aaname='Download Treatment Report' check:text='Download Treatment Report' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAN8AAAAeCAYAAACsTcs9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAARcSURBVHhe7Zi9btswEID7TPFr+TE6Gg76HkbyDM1owFvmDAlgT10y1UtZkscT70+U08iig56BD410FHkk76OEfjudTuHp6Smcz2fHcRYg+Za8c/kcZ2FcPsfphMvnOJ1w+RynE1eX7+7+z01h5eg4PXD5HKcTLp/jdMLlc5xOuHyO04lF5Nv/Dubv5dkW5Jqc33ZhvVqH3Zud7+c4hM1qFTZ7HTtsV2EVYzbXyef4sA6r7cGMXZv22MewW1vrEFnvwtF8ZhmWXLPF5FOi/QzhvYOAveRj7DeLFNmty6fXqUjZKefE/yFf4hnegI/kHntL/grs/vtrbbd9jfF4b1uu7+7jGPHWY/l3n+Lkh2No+cQpLBc+iYKxzCYcSDxv1vDs5hPyJXE3YYf9YVyML/tWb9SSP8sr95X6j/Pep/nL++VaHUo0FiFrA0W6Y2u3fjjWGD5jHjJj8kXyfBtrzHIcm1N9Vs4Bc8R+1w+7If79x1Te89JXPhTlJ1xn8YRweJ1lk7H4G8RNIuc49EnFpP1w+eRJK65zIcjNrnEoilooKMK/y0dzKe1oIYqDI49H+ymi4vggCPZX+h/aY1GK/kT7OhdYGynYEBdrxceWXC5f7kfNEeM4B7EHYo5VOH4Nc6D7O5X3vHSWj8SMtyB+mmY5y98QB8FeolDY7+Pwd4mR8ehbkhWwLO7ExGdpLVBejIAs2BHSuCPyyWKXfbWLg/fB2+rcuGwRkpc5Tl4bWK8cZ3NojS0Zkw/u85z1XqS8Yd31nOj+6RwjZM+teDvvebkZ+fRnZAJEgjcj+bu85dIz8CkKMSbmBfKZm2NteH4mnbCFvDnGxrdOdMpF8sH1MCZFFEeeB4ljH7yQdL61iMs9klcWk/RZmU8+s3/6jFx3QpVPylnzUIfL0KfLF6lCTcsHb7ck2yBdehumZ9K/5bNyVvnI5mNR1Q3VxXwN+Vp95fxzfvj25s/wQtL9TcrXKEK9dq2xJXqdYC7WoSfloqQxXb5RUvGPykc/Nac+O7FNlCz1x96GUa7a/+Xy0U+QIWcpp9iIuqFQQNf+7OT9UyzRWwLo3FryWYVJ0fHW2BL7kMpry/Zjaj2NuNw/OQey51a8nfe89JOviEXvp3bqP1XINT6TfihpbkOuPyRfKYK62Pxabk6+jps9tBfyQvG0iqVwkXyR3D892amQ9O8ao+PzQvqYfNiexul6yLWR/fOxJZCrXifoQ6/5mJC6fT0ca7zOgV/rOUzlPS+LyWf9hjcagbWl4tE4ua8/Vz8iX6IWLRNrJCaLAa4hjv9trYtKcKl8Edo/jEFkyXOpsc2+5ItzGOIpX91/W76I6F9JweYg+mdjYxtkTL4IPkf2AQ+1Ok9sX8bcpkOqxEfWFeNjh8nQvpn3vCwi3y1h5eh8VewD66vg8jlfGJeviSVAT6wcna+Ky9fEEqAnVo6O0wOXz3E6cXX5HMexcfkcpxMun+N0wuVznE64fI7TCZDvFP4CRqP2Jqt7pmgAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" Text="Download Treatment Report" TextMethod="AttributeText" TextSelector="&lt;webctrl tag='A' type='' /&gt;" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+            </uix:NClick>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAOCSURBVFhH7djZTuMwFAZgHmlecEbsdKUL3XfWB0LiAgmpSIiB0kIRaOiS0jP+HTtL40xjh5mrsfQrSavWHyeNFzb+t7/VLi4u6Pz8nM7OznhOT0/p5AQ5oePjY+ohvR51uz3qdLvU6XSojbTb1Gq1qdlqUbPZpAZLvdGger2B98elUumb6CJeA+7z8zM0C28WIs75wnNc0HK5JPzB/dtb4L8GiaoBYlkWz1xmbmc2n4uw8xk7Iux6ys9n/DjlxxlHAvj29kb9fp9VtRUfaQOXMYE2UgLf399pPB7Tzc0Nbvs4l4uBxG8uUEGBM63g6+srvby80HA4pOvra6rW6gyZM0PigZDA1eqFAZ2qTdXA5+dnGo1G9PT0RA8PD3R1dUWVatUMiacVQBVu7uD0gIANBgOOu7+/p7u7O7q8vKRypTIW3UZvGEo40Aezo8LhGigODQFmMhll8oUCiW6jN4xzKqCLQ1RAiRNAYFkGuK2PrHo8j6yKj/STZTgcUS5vAmSDsB8oUTJBHI+o3oQfXSCu3UxpMpnSB4tlLRgwrw/EDIGB14+S8eAkjMfGuecqnA0ETgIPcwZATF9BIG6xH4fXAeJQ1vkq7k/Vk8DsYc4AyOZVGyhQIbAgzg/048KAh/pATPyYT30omYi4ddWTwEzWBMhWJT6guM0uJIgDIhwXDkxns/pALJnkb9CLQmy0gIjXTHAOMGMAxHoOFVSiEPG6HVy77wVxSDgwlc4YANlCEzOAA0J8KE/VDHE20KJkOq0PxErYW0ElKiYOwTyfTBkAsUznFVzFeMMAcXAfHxMOTKRSBkC2h1ACWcfrYch63C8BPEgaAGv1evA36IkaJbMGxwKcA0wk9YHVWs0BqhGqMJgGTgL3EwkDYLVGFgOqIatxYetw8tb6gAcGQLYUjwDUgCErOAnc2z/QB5YrKqAAeVCRYJMgTAbAXTNgRQCDoGgoEQXKGw7c29cHlsplPg0pO40aBWg1AO4YAUsxgApIWADc3t3TBx6VSvpABWBdOHBnVx9YPIoKnBjBZADcMgMehQBtUByUNwBubu/oAwtFAK0vg4TFGJgvFvmHVV/6lUEfP7a2DYCFAv/wv8j3zS19IP4dgR0/NtXYt2JriN0XNjjYQ2CZjpUwFptYz2HJhFUJJn7MrZi+MENgEMY4h6EETyseCNxSBJUDzgj4v0VqGxu/Af19epyRUejIAAAAAElFTkSuQmCC" InformativeScreenshot="94a5f076cfa61a6eda2d665d7888bd7f.png" Selector="&lt;html app='chrome.exe' title='ACME System 1 - Dashboard'/&gt;" Url="https://acme-test.uipath.com/reboot-your-skills" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+    <Sequence DisplayName="Data Extraction" sap:VirtualizedContainerService.HintSize="850.4,2299.2" sap2010:WorkflowViewState.IdRef="Sequence_33">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <uix:NApplicationCard OpenMode="{x:Null}" sap2010:Annotation.AnnotationText="Notice that after &quot;appointment&quot; a * is added. It's called a wildcard, and it tells the robot to look at all the pages that have the URL &quot;https://acme-test.uipath.com/medical/appointment&quot; and whatever comes after.&#xA;" CloseMode="Always" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="809.6,2187.2" sap2010:WorkflowViewState.IdRef="NApplicationCard_7" InteractionMode="Simulate">
+        <uix:NApplicationCard.Body>
+          <ActivityAction x:TypeArguments="x:Object">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="510.4,1896" sap2010:WorkflowViewState.IdRef="Sequence_32">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <uix:NSelectItem sap2010:Annotation.AnnotationText="This activity selets the value &quot;Yesterday&quot; from the dropdown. The user can also be asked at runtime to choose a value.&#xA;&#xA;In the Design time, this activity was added after the data extraction activities were created." DisplayName="Select Item 'Day:'" sap:VirtualizedContainerService.HintSize="467.2,265.6" sap2010:WorkflowViewState.IdRef="NSelectItem_3" Item="Yesterday" RequiresInitialization="True">
+                <uix:NSelectItem.Items>
+                  <scg:List x:TypeArguments="x:String" Capacity="3">
+                    <x:String>Yesterday</x:String>
+                    <x:String>Today</x:String>
+                    <x:String>Tomorrow</x:String>
+                  </scg:List>
+                </uix:NSelectItem.Items>
+                <uix:NSelectItem.Target>
+                  <uix:TargetAnchorable BrowserURL="https://acme-test.uipath.com/medical/appointment" DesignTimeRectangle="460, 371, 485, 34" ElementType="DropDown" FriendlyName="'Today'" FullSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Medical' /&gt;&lt;webctrl tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Medical' /&gt;&lt;webctrl tag='SELECT' type='' aaname='' /&gt;" InformativeScreenshot="72e0eb5ff010da7010821c54137f9571.png" SearchSteps="FuzzySelector" Text="Today" TextMethod="AttributeText" TextSelector="&lt;webctrl tag='SELECT' type='' /&gt;">
+                    <uix:TargetAnchorable.Anchors>
+                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                        <uix:Target DesignTimeRectangle="460, 346, 30, 20" ElementType="Text" FriendlyName="'Day:'" FullSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Medical' /&gt;&lt;webctrl tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Medical' /&gt;&lt;webctrl tag='LABEL' type='' aaname='Day:' check:text='Day:' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACIAAAAYCAYAAACfpi8JAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAD4SURBVEhL7ZTRDYQgDEBvJ+c6ViFugpMYxjBxhx5IK7WAeEYSP3hJP4QCD9r4gZfQRSRdRNJFJLvIOikYhiGNr4EVc1pSF9lCg8W8ViQiauL3X8F8UWYkFTaGsa+Ztch1yLFcjqMi4lgMKL8QS2THcPgxFJjFJ1vQ23d8QcrXMw7cFslszpEHhe+yWInbIrKn5I23feg1xe1z3C7N8QWYCIm7fIt7xrkyVRE6KIzL14mNyw+jNSHqZfEkIvmgzUgkjcOtqSF9yLJcbdYk5A+NH+Lnsn0QhZOy1ESeJd/gZ7QRKdz6jIdF+F/3+mt4GpXmf7qI5CUiAD+0so5qJS97hAAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" Text="Day:" TextMethod="AttributeText" TextSelector="&lt;webctrl tag='LABEL' type='' /&gt;" />
+                      </scg:List>
+                    </uix:TargetAnchorable.Anchors>
+                  </uix:TargetAnchorable>
+                </uix:NSelectItem.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NSelectItem>
+              <uix:NExtractData sap2010:Annotation.AnnotationText="The robot extracts all the URLs and saves them into Scratchpad." ContinueOnError="True" DataTable="[Notes.Sheet(&quot;Scratchpad&quot;).DataTableOutValue]" DisplayName="Extract Table Data" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Column1' attr='text' name2='Column2' attr2='href'&gt;&lt;webctrl tag='tr'/&gt;&lt;webctrl tag='td' idx='2'/&gt;&lt;webctrl tag='a' idx='1'/&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="467.2,209.6" sap2010:WorkflowViewState.IdRef="NExtractData_5" MaximumResults="100">
+                <uix:NExtractData.NextLink>
+                  <uix:TargetAnchorable BrowserURL="https://acme-test.uipath.com/medical/appointment" DesignTimeRectangle="1447, 845, 22, 22" ElementType="Text" FriendlyName="'&gt;'" FullSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Medical' /&gt;&lt;webctrl aaname='&amp;gt;' tag='A' /&gt;" FuzzySelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Medical' /&gt;&lt;webctrl aaname='&amp;gt;' tag='A' type='' check:text='&amp;gt;' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAEQSURBVEhLzZVRCoMwEER7Wi/RS0hv0V7CS3gJEfFH/BHZ9rUk2HSaNLaEDgyI2ewjyUQPVkj/A1rX1eZ5tnEcre9767rubp55xxg1KUVB0zT5xilTG5MELctiwzDIhjEzh7lKLyAKt1uUa+Yq2Atoz0pC0yPUEyjnTFIOz8yDSI6a8I23afQgYqqKvzE9nTyIO6GKcXOqrG70WMz0dPKgVNKAVdXNp0aOK9PTyYNUoXJ7Pj6Ax4u1Yjy0UzbIu6k/gjl9vHXOOSuSWxcLA95zRjIMsXjvTZ2Md7ELi4p8gpyKfFRRsd8EonDPypijIEiCnHLOLDyTUFEQIjnElDux3VKeecfYNl3vlAT9SoVAZlf28hDFZCh5ewAAAABJRU5ErkJggg==" InformativeScreenshot="da7d0bd161e0e7c60f462123ba26fb58.png" SearchSteps="FuzzySelector, Image" Text="&gt;" TextMethod="AttributeText" TextSelector="&lt;webctrl tag='A' type='' /&gt;" />
+                </uix:NExtractData.NextLink>
+                <uix:NExtractData.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="446, 349, 1028, 481" FriendlyName="'User Id'" FullSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Medical' /&gt;&lt;webctrl tag='TBODY' /&gt;" InformativeScreenshot="7cf759ef2e4f47c9f88a4475634726e0.png" SearchSteps="Selector" Text="User Id&#xA;                    File&#xA;                &#xA;                                    &#xA;            " TextMethod="AttributeText" TextSelector="&lt;webctrl tag='TBODY' type='' /&gt;" />
+                </uix:NExtractData.Target>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </uix:NExtractData>
+              <ueab:ExcelForEachRow sap2010:Annotation.AnnotationText="We go through each row of the extracted data." DisplayName="Excel For Each Row" EmptyRowBehavior="Stop" HasHeaders="False" sap:VirtualizedContainerService.HintSize="467.2,1248" sap2010:WorkflowViewState.IdRef="ExcelForEachRow_2" Range="[Notes.Sheet(&quot;Scratchpad&quot;)]" SaveAfterEachRow="False">
+                <ueab:ExcelForEachRow.Body>
+                  <ActivityAction x:TypeArguments="ue:CurrentRowQuickHandle, x:Int32">
+                    <ActivityAction.Argument1>
+                      <DelegateInArgument x:TypeArguments="ue:CurrentRowQuickHandle" Name="CurrentRow" />
+                    </ActivityAction.Argument1>
+                    <ActivityAction.Argument2>
+                      <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
+                    </ActivityAction.Argument2>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="455.2,1033.6" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:GetLastDownloadedFile Timeout="{x:Null}" sap2010:Annotation.AnnotationText="Opening the links extracted in a browser triggers the download of files. These files are later used in the automation so we save the File Information For Later Use." DisplayName="Download File" DownloadFolder="[string.Format(&quot;{0}\Downloads&quot;, Environment.GetFolderPath(Environment.SpecialFolder.UserProfile))]" File="[Saved.Values(Of FileInfo)(&quot;Downloaded file&quot;)]" sap:VirtualizedContainerService.HintSize="412,484" sap2010:WorkflowViewState.IdRef="GetLastDownloadedFile_2">
+                        <ui:GetLastDownloadedFile.Body>
+                          <ActivityAction>
+                            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="400,216" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <uix:NGoToUrl sap2010:Annotation.AnnotationText="Opening the links extracted in a browser triggers the download of a file." DisplayName="Go To URL" sap:VirtualizedContainerService.HintSize="356.8,124.8" sap2010:WorkflowViewState.IdRef="NGoToUrl_1" Url="[CurrentRow.ByField(&quot;B&quot;)]">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                              </uix:NGoToUrl>
+                            </Sequence>
+                          </ActivityAction>
+                        </ui:GetLastDownloadedFile.Body>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:GetLastDownloadedFile>
+                      <Delay sap2010:Annotation.AnnotationText="When downloading multiple files, the robot might move faster than the downloading speed, so it might try to move the file before the download completes. This will result in an error. &#xA;&#xA;To avoid it, we add a delay, telling the robot to wait 2 seconds after the download is completed before moving the file." Duration="00:00:02" sap:VirtualizedContainerService.HintSize="412,187.2" sap2010:WorkflowViewState.IdRef="Delay_1">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Delay>
+                      <ui:MoveFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="the robot moves the downloaded file into a specified folder." Destination="[string.Format(&quot;{0}\Appointments&quot;, Directory.GetCurrentDirectory())]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="412,189.6" sap2010:WorkflowViewState.IdRef="MoveFile_1" Overwrite="True" Path="[Saved.Values(Of FileInfo)(&quot;Downloaded file&quot;).FullName]">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:MoveFile>
+                    </Sequence>
+                  </ActivityAction>
+                </ueab:ExcelForEachRow.Body>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ueab:ExcelForEachRow>
+            </Sequence>
+          </ActivityAction>
+        </uix:NApplicationCard.Body>
+        <uix:NApplicationCard.TargetApp>
+          <uix:TargetApp BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAOCSURBVFhH7djZTuMwFAZgHmlecEbsdKUL3XfWB0LiAgmpSIiB0kIRaOiS0jP+HTtL40xjh5mrsfQrSavWHyeNFzb+t7/VLi4u6Pz8nM7OznhOT0/p5AQ5oePjY+ohvR51uz3qdLvU6XSojbTb1Gq1qdlqUbPZpAZLvdGger2B98elUumb6CJeA+7z8zM0C28WIs75wnNc0HK5JPzB/dtb4L8GiaoBYlkWz1xmbmc2n4uw8xk7Iux6ys9n/DjlxxlHAvj29kb9fp9VtRUfaQOXMYE2UgLf399pPB7Tzc0Nbvs4l4uBxG8uUEGBM63g6+srvby80HA4pOvra6rW6gyZM0PigZDA1eqFAZ2qTdXA5+dnGo1G9PT0RA8PD3R1dUWVatUMiacVQBVu7uD0gIANBgOOu7+/p7u7O7q8vKRypTIW3UZvGEo40Aezo8LhGigODQFmMhll8oUCiW6jN4xzKqCLQ1RAiRNAYFkGuK2PrHo8j6yKj/STZTgcUS5vAmSDsB8oUTJBHI+o3oQfXSCu3UxpMpnSB4tlLRgwrw/EDIGB14+S8eAkjMfGuecqnA0ETgIPcwZATF9BIG6xH4fXAeJQ1vkq7k/Vk8DsYc4AyOZVGyhQIbAgzg/048KAh/pATPyYT30omYi4ddWTwEzWBMhWJT6guM0uJIgDIhwXDkxns/pALJnkb9CLQmy0gIjXTHAOMGMAxHoOFVSiEPG6HVy77wVxSDgwlc4YANlCEzOAA0J8KE/VDHE20KJkOq0PxErYW0ElKiYOwTyfTBkAsUznFVzFeMMAcXAfHxMOTKRSBkC2h1ACWcfrYch63C8BPEgaAGv1evA36IkaJbMGxwKcA0wk9YHVWs0BqhGqMJgGTgL3EwkDYLVGFgOqIatxYetw8tb6gAcGQLYUjwDUgCErOAnc2z/QB5YrKqAAeVCRYJMgTAbAXTNgRQCDoGgoEQXKGw7c29cHlsplPg0pO40aBWg1AO4YAUsxgApIWADc3t3TBx6VSvpABWBdOHBnVx9YPIoKnBjBZADcMgMehQBtUByUNwBubu/oAwtFAK0vg4TFGJgvFvmHVV/6lUEfP7a2DYCFAv/wv8j3zS19IP4dgR0/NtXYt2JriN0XNjjYQ2CZjpUwFptYz2HJhFUJJn7MrZi+MENgEMY4h6EETyseCNxSBJUDzgj4v0VqGxu/Af19epyRUejIAAAAAElFTkSuQmCC" InformativeScreenshot="05a955c98f7a667a880b36d27848db74.png" Selector="&lt;html app='chrome.exe' title='ACME System 1 - Medical'/&gt;" Url="https://acme-test.uipath.com/medical/appointment*" />
+        </uix:NApplicationCard.TargetApp>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </uix:NApplicationCard>
+    </Sequence>
+    <p:WordApplicationScope sap2010:Annotation.AnnotationText="We open the Email Body Template file, which we will use to send Sam via email all the emergency appointments." DisplayName="Use Word File" FilePath="Email body template.docx" sap:VirtualizedContainerService.HintSize="807.2,1620.8" sap2010:WorkflowViewState.IdRef="WordApplicationScope_1">
+      <p:WordApplicationScope.Body>
+        <ActivityAction x:TypeArguments="ui:WordDocument">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="ui:WordDocument" Name="WordDocumentScope" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="622.4,1438.4" sap2010:WorkflowViewState.IdRef="Sequence_23">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:ForEachFileX sap2010:Annotation.AnnotationText="We go through each file from the designated folder in which we moved the downloaded files..." DisplayName="For Each File In Folder" Folder="[string.Format(&quot;{0}\Appointments&quot;, Directory.GetCurrentDirectory())]" sap:VirtualizedContainerService.HintSize="579.2,1347.2" sap2010:WorkflowViewState.IdRef="ForEachFileX_1" IncludeSubDirectories="False" OrderBy="NameAscFirst">
+              <ui:ForEachFileX.Body>
+                <ActivityAction x:TypeArguments="si:FileInfo, x:Int32">
+                  <ActivityAction.Argument1>
+                    <DelegateInArgument x:TypeArguments="si:FileInfo" Name="CurrentFile" />
+                  </ActivityAction.Argument1>
+                  <ActivityAction.Argument2>
+                    <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
+                  </ActivityAction.Argument2>
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="567.2,1083.2" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ueab:ExcelApplicationCard Password="{x:Null}" sap2010:Annotation.AnnotationText="...open them..." DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="524,992" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_3" TemplatePath="Appointments\0093-0130_appointment.xlsx" UseTemplate="True" WorkbookPath="[CurrentFile.FullName]">
+                      <ueab:ExcelApplicationCard.Body>
+                        <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Appointment" />
+                          </ActivityAction.Argument>
+                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="512,730.4" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <If sap2010:Annotation.AnnotationText="...and check if the Care Type is Emergency or not." Condition="[Appointment.Sheet(&quot;Treatment Report 3&quot;).Cell(&quot;G2&quot;) = string.Format(&quot;Emergency&quot;)]" sap:VirtualizedContainerService.HintSize="468.8,639.2" sap2010:WorkflowViewState.IdRef="If_2">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <If.Then>
+                                <Sequence sap:VirtualizedContainerService.HintSize="455.2,430.4" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <p:WordInsertDataTable Bookmark="{x:Null}" sap2010:Annotation.AnnotationText="If the Care Type was emergency, we add all the file's data inside the Word file, after the &quot;Here are yesterday's emergencies:&quot; text." DataTable="[Appointment.Sheet(&quot;Treatment Report 3&quot;)]" DisplayName="Insert DataTable" sap:VirtualizedContainerService.HintSize="412,339.2" sap2010:WorkflowViewState.IdRef="WordInsertDataTable_1" InsertRelativeTo="Text" OccurrenceIndex="[CurrentIndex]" Position="After" Text="Here are yesterday’s emergencies:">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                  </p:WordInsertDataTable>
+                                </Sequence>
+                              </If.Then>
+                              <If.Else>
+                                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_20">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </Sequence>
+                              </If.Else>
+                            </If>
+                          </Sequence>
+                        </ActivityAction>
+                      </ueab:ExcelApplicationCard.Body>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                    </ueab:ExcelApplicationCard>
+                  </Sequence>
+                </ActivityAction>
+              </ui:ForEachFileX.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:ForEachFileX>
+          </Sequence>
+        </ActivityAction>
+      </p:WordApplicationScope.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </p:WordApplicationScope>
+    <umab:OutlookApplicationCard Account="{x:Null}" sap2010:Annotation.AnnotationText="Lastly, Sam receives all the emergencies list." DisplayName="Use Outlook Account" sap:VirtualizedContainerService.HintSize="807.2,670.4" sap2010:WorkflowViewState.IdRef="OutlookApplicationCard_1">
+      <umab:OutlookApplicationCard.Body>
+        <ActivityAction x:TypeArguments="um:IMailQuickHandle">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="um:IMailQuickHandle" Name="Outlook" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="455.2,459.2" sap2010:WorkflowViewState.IdRef="Sequence_16">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <umab:SendMailX Bcc="{x:Null}" Body="{x:Null}" Cc="{x:Null}" Account="[Outlook]" BodyDocumentPath="Email body template.docx" DisplayName="Send Outlook Email" sap:VirtualizedContainerService.HintSize="412,368" sap2010:WorkflowViewState.IdRef="SendMailX_1" IsDraft="False" MaxBodyDocumentSizeMB="2" Subject="Emergencies" To="sam.barnes@uipath.com" UseDocumentAsBody="True">
+              <umab:SendMailX.Files>
+                <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+              </umab:SendMailX.Files>
+            </umab:SendMailX>
+          </Sequence>
+        </ActivityAction>
+      </umab:OutlookApplicationCard.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </umab:OutlookApplicationCard>
+  </ueab:SequenceX>
+</Activity>
